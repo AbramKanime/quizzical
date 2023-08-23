@@ -1,4 +1,4 @@
-# co92b4673b31f03249f17658d
+# Quizzical App built with React
 
 Warning: Vite enforces using jsx syntax inside jsx/tsx files, so it will complain about that. Solution: rename `.js` files to `.jsx` :)
 
@@ -10,14 +10,8 @@ $ npm start
 ````
 
 Head over to https://vitejs.dev/ to learn more about using vite
-## About Scrimba
+## About Quizzical
 
-At Scrimba our goal is to create the best possible coding school at the cost of a gym membership! 💜
-If we succeed with this, it will give anyone who wants to become a software developer a realistic shot at succeeding, regardless of where they live and the size of their wallets 🎉
-The Frontend Developer Career Path aims to teach you everything you need to become a Junior Developer, or you could take a deep-dive with one of our advanced courses 🚀
+The app was built solely using React. I have the index.jsx file as the src file for the index.html file. The App.jsx is rendered in the index.jsx file, and it has three components that were used to build it.
 
-- [Our courses](https://scrimba.com/allcourses)
-- [The Frontend Career Path](https://scrimba.com/learn/frontend)
-- [Become a Scrimba Pro member](https://scrimba.com/pricing)
-
-Happy Coding!
+The Quizzical app fetches questions and answer options from an Api and displays. The player selects options that they feel match the questions, and check the answers. The app grades the player, and scores him. The player has the option to play the multiple times.
