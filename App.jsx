@@ -91,8 +91,8 @@ export default function App() {
     }, [answerElements])
     
     function reset() {
-        setIsQuestion(true)
         callApi()
+        setIsQuestion(true)
     }
     
     const style = {
