@@ -14,11 +14,6 @@ export default function App() {
     const [scores, setScores] = React.useState(0)
     
     function callApi() {
-        fetchApi()
-        setIsHomepage(false)
-    }
-
-    function fetchApi() {
         fetch("https://opentdb.com/api.php?amount=5&type=multiple")
             .then(res => res.json())
             .then(data => {
@@ -39,6 +34,9 @@ export default function App() {
                 }
                 setQuestion(questions)
             })
+            if (isHomepage){
+                setIsHomepage(false)
+            }
     }
     
     function handleChange(e) {
@@ -95,7 +93,7 @@ export default function App() {
     }, [answerElements])
     
     function reset() {
-        fetchApi()
+        callApi()
         setIsQuestion(true)
     }
     
