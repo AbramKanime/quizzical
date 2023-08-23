@@ -1,8 +1,9 @@
 import React from "react"
+import {decode} from "html-entities"
 
 export default function Answers(props) {
-    const options = props.options
-    const itemObject = props.itemObject
+    const options = decode(props.options)
+    const itemObject = decode(props.itemObject)
     function correctAnsColor(option) {
         return option === itemObject.correctAnswer ? {background: "#94D7A2"}
             : option === itemObject.selectedAnswer && option !== itemObject.correctAnswer ? {background: "#F8BCBC"}
@@ -11,7 +12,7 @@ export default function Answers(props) {
     
     return (
         <div className="question">
-            <h3>{props.question}</h3>
+            <h3>{decode(props.question)}</h3>
             <form id={props.id}>
                 <input
                     type="radio"
