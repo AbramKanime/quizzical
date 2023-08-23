@@ -12,7 +12,6 @@ export default function App() {
     const [answerElements, setAnswerElements] = React.useState("")
     const [questionElements, setQuestionElements] = React.useState("")
     const [scores, setScores] = React.useState(0)
-    // const [count, setCount] = React.useState(0)
     
     function callApi() {
         fetch("https://opentdb.com/api.php?amount=5&type=multiple")
@@ -34,7 +33,6 @@ export default function App() {
                     questions.push(question)
                 }
                 setQuestion(questions)
-                // setCount(count + 1)
                 if (isHomepage){
                     setIsHomepage(false)
                 }
