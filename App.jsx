@@ -33,8 +33,8 @@ export default function App() {
                     questions.push(question)
                 }
                 setQuestion(questions)
-                setIsHomepage(false)
             })
+            setIsHomepage(false)
     }
     
     function handleChange(e) {
