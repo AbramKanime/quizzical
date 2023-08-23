@@ -12,6 +12,7 @@ export default function App() {
     const [answerElements, setAnswerElements] = React.useState("")
     const [questionElements, setQuestionElements] = React.useState("")
     const [scores, setScores] = React.useState(0)
+    const [count, setCount] = React.useState(0)
     
     function callApi() {
         fetch("https://opentdb.com/api.php?amount=5&type=multiple")
@@ -33,10 +34,11 @@ export default function App() {
                     questions.push(question)
                 }
                 setQuestion(questions)
+                setCount(count + 1)
             })
-            if (isHomepage){
-                setIsHomepage(false)
-            }
+        if (isHomepage){
+            setIsHomepage(false)
+        }
     }
     
     function handleChange(e) {
@@ -62,7 +64,7 @@ export default function App() {
             })
             setQuestionElements(questionHtml)
         }
-    }, [question])
+    }, [count])
     
     function calculateScores() {
         let number = 0
@@ -105,7 +107,7 @@ export default function App() {
         height: "100%"
     }
     
-    function render() {
+    function renderJsx() {
         let html
         if (isQuestion){
             html = questionElements
@@ -118,7 +120,7 @@ export default function App() {
     return (
         <main style={isHomepage ? style : style2}>
             {isHomepage && <Homepage callApi={callApi} />}
-            {render()}
+            {renderJsx()}
             {!isHomepage && isQuestion && <button className="check-ans-btn" onClick={checkAnswers}>Check answers</button>}
             <div className="scores-msg-container">
                 {!isHomepage && !isQuestion && <p>You scored {scores}/5 correct answers</p>}
