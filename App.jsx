@@ -21,9 +21,9 @@ export default function App() {
                 const questions = []
                 for (let result of data.results) {
                     const question = {
-                        question: decode(result.question),
-                        correctAnswer: decode(result.correct_answer),
-                        answers: decode(result.incorrect_answers),
+                        question: result.question,
+                        correctAnswer: result.correct_answer,
+                        answers: result.incorrect_answers,
                         selectedAnswer: "",
                         id: nanoid()
                         }
@@ -32,6 +32,7 @@ export default function App() {
                     const shuffleArray = ansArray.sort((a, b) => 0.5 - Math.random())
                     question.answers = shuffleArray
                     questions.push(question)
+                    console.log(question)
                 }
                 setQuestion(questions)
                 setCount(count + 1)

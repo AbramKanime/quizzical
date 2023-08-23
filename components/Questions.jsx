@@ -1,11 +1,12 @@
 import React from "react"
+import {decode} from "html-entities"
 
 export default function Questions(props) {
-    const options = props.options
+    const options = decode(props.options)
     
     return (
         <div className="question">
-            <h3>{props.question}</h3>
+            <h3>{decode(props.question)}</h3>
             <form id={props.id}>
                 <input
                     type="radio"
