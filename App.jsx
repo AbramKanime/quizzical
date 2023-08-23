@@ -35,10 +35,10 @@ export default function App() {
                 }
                 setQuestion(questions)
                 setCount(count + 1)
+                if (isHomepage){
+                    setIsHomepage(false)
+                }
             })
-        if (isHomepage){
-            setIsHomepage(false)
-        }
     }
     
     function handleChange(e) {
