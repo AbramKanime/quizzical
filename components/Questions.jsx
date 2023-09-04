@@ -1,9 +1,10 @@
 import React from "react"
+import {decode} from "html-entities"
 
 export default function Questions(props) {
-    const options = props.options
+    const options = decode(props.options)
     
-    return options ? (
+    return (
         <div className="question">
             <h3>{decode(props.question)}</h3>
             <form id={props.id}>
@@ -45,5 +46,5 @@ export default function Questions(props) {
                 <label htmlFor={options[3]}>{options[3]}</label>
             </form>
         </div>
-    ) : <h2>Loading...</h2>
+    )
 }
