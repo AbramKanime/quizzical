@@ -118,7 +118,7 @@ export default function App() {
     return (
         <main style={isHomepage ? style : style2}>
             {isHomepage && <Homepage callApi={callApi} />}
-            question ? {renderJsx()} : <h1>Loading...</h1>
+            {renderJsx()}
             {!isHomepage && isQuestion && <button className="check-ans-btn" onClick={checkAnswers}>Check answers</button>}
             <div className="scores-msg-container">
                 {!isHomepage && !isQuestion && <p>You scored {scores}/5 correct answers</p>}
