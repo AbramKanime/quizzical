@@ -52,10 +52,10 @@ button {
     text-align: left;
     align-self: flex-start;
     flex-direction: column;
-    margin: 0 auto;
+    margin: 0 50px;
     border-bottom: 1px solid #DBDEF0;
-    padding: 25px;
-    width: 80%;
+    padding: 15px;
+    width: 90%;
 }
 
 .question h3 {

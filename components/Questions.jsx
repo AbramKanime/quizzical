@@ -5,7 +5,7 @@ export default function Questions(props) {
     
     return (
         <div className="question">
-            <h3>{decode(props.question)}</h3>
+            <h3>{props.question}</h3>
             <form id={props.id}>
                 <input
                     type="radio"

@@ -9,12 +9,13 @@ export default function App() {
     const [question, setQuestion] = React.useState("")
     const [isHomepage, setIsHomepage] = React.useState(true)
     const [isQuestion, setIsQuestion] = React.useState(true)
-    const [answerElements, setAnswerElements] = React.useState("")
-    const [questionElements, setQuestionElements] = React.useState("")
+    const [answerElements, setAnswerElements] = React.useState(null)
+    const [questionElements, setQuestionElements] = React.useState(null)
     const [scores, setScores] = React.useState(0)
     
-    function callApi() {
-        fetch("https://opentdb.com/api.php?amount=5&type=multiple")
+    function getQuestions() {
+        setIsHomepage(false)
+        fetch(`https://opentdb.com/api.php?amount=5&difficulty=medium&type=multiple`)
             .then(res => res.json())
             .then(data => {
                 const questions = []
@@ -33,9 +34,7 @@ export default function App() {
                     questions.push(question)
                 }
                 setQuestion(questions)
-                if (isHomepage){
-                    setIsHomepage(false)
-                }
+                
             })
     }
     
@@ -93,7 +92,8 @@ export default function App() {
     }, [answerElements])
     
     function reset() {
-        callApi()
+        setQuestionElements(null)
+        getQuestions()
         setIsQuestion(true)
     }
     
@@ -105,20 +105,16 @@ export default function App() {
         height: "100%"
     }
     
-    function renderJsx() {
-        let html
-        if (isQuestion){
-            html = questionElements
-        } else {
-            html = answerElements
-        }
+    function render() {
+        const html = isQuestion ? questionElements : answerElements
+        
         return html
     }
     
     return (
         <main style={isHomepage ? style : style2}>
-            {isHomepage && <Homepage callApi={callApi} />}
-            {renderJsx()}
+            {isHomepage && <Homepage getQuestions={getQuestions} />}
+            {!questionElements && !isHomepage ? <h2>Loading questions...</h2> : render()}
             {!isHomepage && isQuestion && <button className="check-ans-btn" onClick={checkAnswers}>Check answers</button>}
             <div className="scores-msg-container">
                 {!isHomepage && !isQuestion && <p>You scored {scores}/5 correct answers</p>}
