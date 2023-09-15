@@ -1,8 +1,7 @@
 import React from "react"
-import {decode} from "html-entities"
 
 export default function Questions(props) {
-    const options = decode(props.options)
+    const options = props.options
     
     return (
         <div className="question">
