@@ -16,5 +16,7 @@ The player can replay the game multiply times.
 
 You are welcome to leave notes for code optimizations for me!
 
+### Link to the deployed active site of the project: https://quizzical-game-65cabe.netlify.app/
+
 ## Author
 ### Abraham Onyeka Kanime
