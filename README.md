@@ -1,6 +1,6 @@
 # Quizzical App
 
-This app was built using React
+This app was built using React, JS, HTML and CSS
 
 Quick start:
 
