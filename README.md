@@ -2,12 +2,19 @@
 
 This app was built using React, JS, HTML and CSS
 
-Quick start:
-
 ```
-$ npm install
-$ npm start
-````
+To set up the project, follow these steps:
+
+1. Clone the repository
+
+2. Install the project dependencies:
+
+npm install
+
+3. Start the development server:
+
+npm run dev
+```
 
 ## About Quizzical App
 
