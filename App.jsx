@@ -20,6 +20,7 @@ export default function App() {
             .then(data => {
                 const questions = []
                 for (let result of data.results) {
+                    // Sets up the object that contains the questions and answer options
                     const question = {
                         question: decode(result.question),
                         correctAnswer: decode(result.correct_answer),
@@ -28,6 +29,8 @@ export default function App() {
                         id: nanoid()
                         }
                     question.answers.push(result.correct_answer)
+                    // Sets up ansArray to shuffle the answer options
+                    // This ensures that the correct answer is not always at the last option
                     const ansArray = question.answers
                     const shuffleArray = ansArray.sort((a, b) => 0.5 - Math.random())
                     question.answers = shuffleArray
@@ -38,6 +41,7 @@ export default function App() {
             })
     }
     
+    // This function runs when an option is selected to a question
     function handleChange(e) {
         const id = e.target.dataset.option
         const answer = e.target.value
