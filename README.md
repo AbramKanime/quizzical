@@ -2,12 +2,19 @@
 
 This app was built using React, JS, HTML and CSS
 
-Quick start:
-
 ```
-$ npm install
-$ npm start
-````
+To set up the project, follow these steps:
+
+1. Clone the repository
+
+2. Install the project dependencies:
+
+npm install
+
+3. Start the development server:
+
+npm run dev
+```
 
 ## About Quizzical App
 
@@ -16,7 +23,7 @@ The player can replay the game multiply times.
 
 You are welcome to leave notes for code optimizations for me!
 
-### Link to the deployed active site of the project: https://quizzical-game-65cabe.netlify.app/
+#### Link to the deployed active site of the project: https://quizzical-game-65cabe.netlify.app/
 
 ## Author
 ### Abraham Onyeka Kanime
