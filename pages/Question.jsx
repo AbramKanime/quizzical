@@ -26,9 +26,9 @@ export default function Question() {
                 }
                 quest.answers.push(result.correct_answer)
                 // Sets up ansArray to shuffle the answer options
-                // This ensures that the correct answer is not always at the last option
                 const ansArray = quest.answers
                 const decodeAnsArray = ansArray.map(answer => decode(answer))
+                // This ensures that the correct answer is not always at the last option
                 const shuffleArray = decodeAnsArray.sort((a, b) => 0.5 - Math.random())
                 quest.answers = shuffleArray
                 questions.push(quest)
