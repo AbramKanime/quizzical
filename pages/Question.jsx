@@ -62,7 +62,7 @@ export default function Question() {
     if (loading) {
         return (
             <main>
-                <h3>Loading...</h3>
+                <h3>Loading questions...</h3>
             </main>
         )
     }
