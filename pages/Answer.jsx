@@ -2,7 +2,7 @@ import React from "react"
 import { Link } from "react-router-dom"
 import Answers from "../components/Answers"
 import { QuestionContext } from "../components/Layout"
-import { calculateScores } from "../utilities/utilityfunctions"
+import { calculateScores } from "../utils/utilityfunctions"
 
 export default function Answer() {
     const {question} = React.useContext(QuestionContext)
